@@ -1,0 +1,103 @@
+
+<div class="whole" >
+  
+  <form [formGroup]="mainFormGroup" (ngSubmit)="onSubmit()">
+    <div class="grid">
+     
+        <div class="col">
+          <div formGroupName="equipment">
+            <h1>Equipment Details</h1>
+            <!-- <div>
+               <input  pInputText  type="text" formControlName="equipmentId" [(ngModel)]="equipment.equipmentId">
+            </div> -->
+            <div>
+              <small>equipmentNo</small><br>
+              <input pInputText type="text" formControlName="equipmentNo"[(ngModel)]="equipment.equipmentNo" placeholder="equipmentNo">
+              <div *ngIf="mainFormGroup.get('equipment.equipmentNo')?.invalid && mainFormGroup.get('equipment.equipmentNo')?.touched ">
+                 <small style="color: red;">Equipment Number is required.</small>
+              </div> 
+            </div>
+            <div>
+              <small>equipmentSize</small><br>
+              <input pInputText type="text" formControlName="equipmentSize"[(ngModel)]="equipment.equipmentSize" placeholder="equipmentSize">
+       
+            </div>
+            <div>
+              <small>equipmentLinerId</small><br>
+                  <p-dropdown [options]="linerOptions" optionLabel="linerCode" optionValue="linerId" formControlName="equipmentLinerId"  [(ngModel)]="equipment.equipmentLinerId"  placeholder="Select Liner id"></p-dropdown>
+            </div>
+            <div>
+              <small>depotId</small><br>
+              
+              <p-dropdown [options]="depotidOptions"
+              optionLabel="depotCode"
+              optionValue="depotId"
+              formControlName="depotId"
+              [(ngModel)]="equipment.depotId"
+              placeholder="Select Depot id">
+            </p-dropdown>
+            </div>
+            <div>
+              <small>conTrackingNo</small><br>
+              <input pInputText type="text" formControlName="conTrackingNo" [(ngModel)]="equipment.conTrackingNo" placeholder="conTrackingNo">
+            </div>
+            <div>
+              <small>gateInDateTime</small><br>
+              <p-calendar [(ngModel)]="equipment.gateInDateTime" formControlName="gateInDateTime" [showTime]="true" [showSeconds]="true" placeholder="gateInDateTime"></p-calendar>
+              <!-- <input pInputText type="text" formControlName="gateInDateTime" [(ngModel)]="equipment.gateInDateTime"> -->
+            </div>
+            <div>
+              <small>ReferenceNo</small><br>
+              <input pInputText type="text" formControlName="ReferenceNo" [(ngModel)]="equipment.ReferenceNo" placeholder="ReferenceNo">
+            </div>
+            </div>
+         
+        </div>
+        <div class="col right">
+          <div formGroupName="transport">
+            <h1>Transport Details</h1>
+            <!-- <div>
+             <input type="text"  pInputText formControlName="transportId" [(ngModel)]="transport.transportId">
+            </div>  -->
+            <div>
+              <small>transportCompany</small><br>
+             <input type="text"  pInputText formControlName="transportCompany" [(ngModel)]="transport.transportCompany" placeholder="transportCompany">
+            </div>
+            <div>
+              <small>licenseNo</small><br>
+             <input type="text"  pInputText formControlName="licenseNo" [(ngModel)]="transport.licenseNo" placeholder="licenseNo">
+            </div>
+            <div>
+              <small>driverName</small><br>
+             <input type="text"  pInputText formControlName="driverName" [(ngModel)]="transport.driverName" placeholder="driverName">
+            </div>
+            <div>
+              <small>driverMobileNo</small><br>
+             <input type="text"  pInputText formControlName="driverMobileNo" [(ngModel)]="transport.driverMobileNo" placeholder="driverMobileNo">
+            </div>
+            <div>
+              <small>driverEmail</small><br>
+             <input type="text"  pInputText formControlName="driverEmail" [(ngModel)]="transport.driverEmail" placeholder="driverEmail">
+            </div>
+            <button type="submit" pButton style="margin-top: 20px;"  [disabled]="!mainFormGroup.valid" >Submit</button>
+             </div>
+           
+        </div>
+     
+    </div>
+    </form>
+</div>
+<button pButton style="margin-top: 20px;margin-left: 20px;"  (click)="print()">Print  </button>
+
+
+<div class="print-content">
+  <h1>Equipment Details</h1>
+  <p><strong>Equipment No:</strong> {{ equipment.equipmentNo }}</p>
+  <p><strong>Equipment Size:</strong> {{ equipment.equipmentSize }}</p>
+ 
+
+  <h1>Transport Details</h1>
+  <p><strong>Transport Company:</strong> {{ transport.transportCompany }}</p>
+  <p><strong>License No:</strong> {{ transport.licenseNo }}</p>
+
+</div>

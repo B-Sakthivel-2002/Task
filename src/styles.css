@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+body,html{
+    margin: 0px;
+    padding: 0px;
+}
+
+.p-datatable .p-datatable-thead>tr>th{
+    background-color: #3b82f6;
+    color: white;
+}
+
+
+p-dropdown .p-dropdown, .p-calendar
+{
+    width: 80%; 
+    margin-bottom: 26.6px;
+    margin-top: 5px;
+    border-radius: 7px;
+    border: 1px solid #3b82f6;
+}

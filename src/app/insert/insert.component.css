@@ -1,0 +1,46 @@
+
+.whole{
+    /* background-color: rgb(28, 68, 95); */
+    padding: 70px;
+    /* height: 100vh; */
+}
+form{
+    background-color: rgb(253, 253, 253);
+    border: 2px solid #3b82f6;
+    border-radius: 10px;
+}
+input{
+    width: 80%;
+    margin-bottom: 26.6px;
+    margin-top: 5px;
+    border: 1px solid #3b82f6;
+}
+.col{
+    padding: 27px;
+}
+
+
+.print-content {
+    display: none; /* Hide by default */
+  }
+  
+  @media print {
+    .print-content {
+      display: block; /* Display only for printing */
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      margin: 20px;
+    }
+  
+    h1 {
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+  
+    p {
+      font-size: 14px;
+      line-height: 1.5;
+      color: #666;
+    }
+  }
